@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href={% static 'bootstrap.min.css' %}
+        <script src="{% static 'bootstrap.min.js' %}"></script>
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' type='image/x-icon' %}">
+        {% block imports %} {% endblock imports%}
+        <title> {% block title %}{% endblock title %}</title>
+    </head>
+    <body>
+        <div class="page-header">
+            <h1 style="display:inline;"><a href="{% url 'home:landing' %}">Project Anime</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-10">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
