@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Project Anime/ Register{% endblock title %}
+
+{% block content %}
+    <p style="font-size:1.1em;padding-bottom:10px;">This is the registration page of Project Anime</p>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Join Today!</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <button>Sign Up</button>
+    </form>
+    <small>
+        Already have an Account? <a href="#">Log in</a>
+    </small>
+{% endblock content %}
