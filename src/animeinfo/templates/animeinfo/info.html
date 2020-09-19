@@ -1,0 +1,19 @@
+{% extends "common/base.html" %}
+
+{% block title %}Project Anime/ {{anime.name}}/ Info{% endblock title %}
+
+{% block content %}
+    <h2>{{anime.name}}</h3>
+    <div>{{anime.description | linebreaksbr}}</div>
+    {% if anime.is_airing %}
+        <p style="font-size:1.1em;padding-left:10px;padding-top:10px;">Currently Airing: Yes</p>
+    {% else %}
+        <p style="font-size:1.1em;padding-left:10px;padding-top:10px;">Current Airing: Finished</p>
+    {% endif %}
+    <p style="font-size:1.1em;padding-left:10px;">Season: {{anime.get_season_display }} {{anime.year}}
+    {% if anime.airing_to %}
+        <p style="font-size:1.1em;padding-left:10px;">Date: {{ anime.airing_from|date:"M j, Y" }} - {{ anime.airing_to|date:"M j, Y" }}
+    {% else %}
+        <p style="font-size:1.1em;padding-left:10px;">Date: {{ anime.airing_from|date:"M j, Y" }} - ?
+    {% endif %}
+{% endblock content %}
