@@ -4,5 +4,9 @@
 
 {% block content %}
     <p style="font-size:1.2em;padding-bottom:10px;">This is the list of anime:</p>
-    <p style="font-size:1.2em;padding-bottom:10px;">Lol, you thought! This site isn't done yet</p>
+    <ul>
+    {% for ani in anime %}
+        <li>{{ani.name}}</li>
+    {% endfor %}
+    </ul>
 {% endblock content %}
