@@ -1,0 +1,18 @@
+{% extends 'common/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Project Anime/ Login{% endblock title %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Login</legend>
+            {{ form|crispy }}
+        </fieldset>
+        <button>Submit</button>
+    </form>
+    <small>
+        Don't have an Account? <a href="{% url 'users:register' %}">Sign in</a>
+    </small>
+{% endblock content %}
